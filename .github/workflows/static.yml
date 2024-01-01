@@ -23,12 +23,18 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - name: Remove .github
         run: rm -rf .github
       - name: Create Indexes
         uses: Exponential-Workload/create-index-action@master
         with:
           dir: '.'
+      - name: Generate sitemap
+        uses: cicirello/generate-sitemap@v1
+        with:
+          base-url-path: https://repo.shaykstage.dev/
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
