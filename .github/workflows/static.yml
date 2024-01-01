@@ -35,6 +35,8 @@ jobs:
         uses: cicirello/generate-sitemap@v1
         with:
           base-url-path: https://repo.shaykstage.dev/
+          exclude-paths: >
+            /.git
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
