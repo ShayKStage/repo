@@ -27,17 +27,6 @@ jobs:
           fetch-depth: 0
       - name: Remove .github
         run: rm -rf .github .git
-      - name: Generate sitemap
-        uses: FullStackIndie/sitemap-generator@v1.4.1
-        with:
-          url: https://repo.shaykstage.dev
-          cache: 'true'
-          cache-key: sitemap
-      - name: Download sitemap
-        uses: actions/download-artifact@v3
-        with:
-          name: sitemap
-          path: ./
       - name: Create Indexes
         uses: Exponential-Workload/create-index-action@master
         with:
